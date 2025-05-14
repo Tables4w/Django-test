@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = ['Django-test.onrender.com']
+ALLOWED_HOSTS = ['Django-test.onrender.com', 'django-test-yp1z.onrender.com']
 
 # Для CSRF
 CSRF_TRUSTED_ORIGINS = ['Django-test.onrender.com']
