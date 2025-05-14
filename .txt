@@ -1,0 +1,7 @@
+DB_NAME=test2
+DB_USER=msadmin
+DB_PASSWORD=1234
+DB_HOST=localhost
+DB_PORT=3306
+SECRET_KEY=my-very-secret-django-key
+DEBUG=True

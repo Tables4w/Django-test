@@ -15,10 +15,10 @@ import json
 # Подключение к БД
 def get_db_connection():
     return MySQLdb.connect(
-        host='localhost',
-        user='msadmin',
-        passwd='1234',
-        db='test2',
+        host=os.environ.get('DB_HOST'),
+        user=os.environ.get('DB_USER'),
+        passwd=os.environ.get('DB_PASSWORD'),
+        db=os.environ.get('DB_NAME'),
         charset='utf8mb4'
     )
 
