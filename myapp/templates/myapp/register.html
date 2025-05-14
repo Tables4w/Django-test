@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script src="{% static 'myapp/js/register.js' %}" defer></script>
+</head>
+<body>
+    {% if not user.username %}
+    <h2>Register</h2>
+    <form id="registerForm">
+        {% csrf_token %}
+        <input type="text" name="login" placeholder="Login"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="radio" name="gender" id="gender1" value="male">
+        <label for="gender1">Male</label>
+        <input type="radio" name="gender" id="gender2" value="female">
+        <label for="gender2">Female</label><br>
+        <label>Фотография:</label><br>
+        <input type="file" name="avatar" accept="image/png, image/jpeg"><br>
+        <button type="submit">Register</button>
+    </form>
+    <div id="result"></div>
+    {% else %}
+    <p>Вы уже вошли</p>
+    {% endif %}
+</body>
+</html>

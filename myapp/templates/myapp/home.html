@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% csrf_token %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+</head>
+<body>
+    <h1>Ваш логин: {{ user.username }}</h1>
+    <p>Пол: {{ user.gender }}</p>
+
+    {% if avatar_base64 %}
+        <img src="data:image/png;base64,{{ avatar_base64 }}" alt="Аватар">
+    {% else %}
+        <p>(Аватар отсутствует)</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Выйти</button>
+    </form>
+</body>
+</html>
