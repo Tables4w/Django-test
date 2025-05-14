@@ -4,4 +4,5 @@
 python manage.py migrate --noinput
 
 # Сборка статики
-python manage.py collectstatic --noinput
+rm -rf staticfiles/
+python manage.py collectstatic
